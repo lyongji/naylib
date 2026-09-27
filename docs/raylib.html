@@ -618,7 +618,7 @@
 <li><a class="reference" href="#Orange" title="Orange = (r: 255'u, g: 161'u, b: 0'u, a: 255'u)">Orange</a></li>
 <li><a class="reference" href="#Pink" title="Pink = (r: 255'u, g: 109'u, b: 194'u, a: 255'u)">Pink</a></li>
 <li><a class="reference" href="#Purple" title="Purple = (r: 200'u, g: 122'u, b: 255'u, a: 255'u)">Purple</a></li>
-<li><a class="reference" href="#RaylibVersion" title="RaylibVersion = (5, 5, 0)">RaylibVersion</a></li>
+<li><a class="reference" href="#RaylibVersion" title="RaylibVersion = (6, 0, 0)">RaylibVersion</a></li>
 <li><a class="reference" href="#RayWhite" title="RayWhite = (r: 245'u, g: 245'u, b: 245'u, a: 255'u)">RayWhite</a></li>
 <li><a class="reference" href="#Red" title="Red = (r: 230'u, g: 41'u, b: 55'u, a: 255'u)">Red</a></li>
 <li><a class="reference" href="#SkyBlue" title="SkyBlue = (r: 102'u, g: 191'u, b: 255'u, a: 255'u)">SkyBlue</a></li>
@@ -2864,12 +2864,9 @@
 </ul>
 <ul class="simple nested-toc-section">updateModelAnimation
   <li><a class="reference" href="#updateModelAnimation%2CModel%2CModelAnimation%2Cfloat32" title="updateModelAnimation(model: Model; anim: ModelAnimation; frame: float32)">updateModelAnimation(model: Model; anim: ModelAnimation; frame: float32)</a></li>
-
-</ul>
-<ul class="simple nested-toc-section">updateModelAnimationEx
-  <li><a class="reference" href="#updateModelAnimationEx%2CModel%2CModelAnimation%2Cfloat32%2CModelAnimation%2Cfloat32%2Cfloat32" title="updateModelAnimationEx(model: Model; animA: ModelAnimation; frameA: float32;
-                       animB: ModelAnimation; frameB: float32; blend: float32)">updateModelAnimationEx(model: Model; animA: ModelAnimation; frameA: float32;
-                       animB: ModelAnimation; frameB: float32; blend: float32)</a></li>
+<li><a class="reference" href="#updateModelAnimation%2CModel%2CModelAnimation%2Cfloat32%2CModelAnimation%2Cfloat32%2Cfloat32" title="updateModelAnimation(model: Model; animA: ModelAnimation; frameA: float32;
+                     animB: ModelAnimation; frameB: float32; blend: float32)">updateModelAnimation(model: Model; animA: ModelAnimation; frameA: float32;
+                     animB: ModelAnimation; frameB: float32; blend: float32)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">updateMusicStream
@@ -4863,7 +4860,7 @@
   </dd>
 </div>
 <div id="RaylibVersion">
-  <dt><pre><a href="#RaylibVersion"><span class="Identifier">RaylibVersion</span></a> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">5</span><span class="Other">,</span> <span class="DecNumber">5</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+  <dt><pre><a href="#RaylibVersion"><span class="Identifier">RaylibVersion</span></a> <span class="Other">=</span> <span class="Other">(</span><span class="DecNumber">6</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
   <dd>
     
     
@@ -13702,13 +13699,9 @@
 
   </dd>
 </div>
-
-</div>
-<div id="updateModelAnimationEx-procs-all">
-  <div id="updateModelAnimationEx,Model,ModelAnimation,float32,ModelAnimation,float32,float32">
-  <dt><pre><span class="Keyword">func</span> <a href="#updateModelAnimationEx%2CModel%2CModelAnimation%2Cfloat32%2CModelAnimation%2Cfloat32%2Cfloat32"><span class="Identifier">updateModelAnimationEx</span></a><span class="Other">(</span><span class="Identifier">model</span><span class="Other">:</span> <a href="#Model"><span class="Identifier">Model</span></a><span class="Other">;</span> <span class="Identifier">animA</span><span class="Other">:</span> <a href="#ModelAnimation"><span class="Identifier">ModelAnimation</span></a><span class="Other">;</span>
-                            <span class="Identifier">frameA</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">animB</span><span class="Other">:</span> <a href="#ModelAnimation"><span class="Identifier">ModelAnimation</span></a><span class="Other">;</span>
-                            <span class="Identifier">frameB</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">blend</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span> {.
+<div id="updateModelAnimation,Model,ModelAnimation,float32,ModelAnimation,float32,float32">
+  <dt><pre><span class="Keyword">func</span> <a href="#updateModelAnimation%2CModel%2CModelAnimation%2Cfloat32%2CModelAnimation%2Cfloat32%2Cfloat32"><span class="Identifier">updateModelAnimation</span></a><span class="Other">(</span><span class="Identifier">model</span><span class="Other">:</span> <a href="#Model"><span class="Identifier">Model</span></a><span class="Other">;</span> <span class="Identifier">animA</span><span class="Other">:</span> <a href="#ModelAnimation"><span class="Identifier">ModelAnimation</span></a><span class="Other">;</span> <span class="Identifier">frameA</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span>
+                          <span class="Identifier">animB</span><span class="Other">:</span> <a href="#ModelAnimation"><span class="Identifier">ModelAnimation</span></a><span class="Other">;</span> <span class="Identifier">frameB</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">;</span> <span class="Identifier">blend</span><span class="Other">:</span> <span class="Identifier">float32</span><span class="Other">)</span> {.
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;UpdateModelAnimationEx&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;raylib.h&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -14543,7 +14536,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-06-01 05:00:32 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-09-27 12:14:27 UTC</small>
       </div>
     </div>
   </div>

@@ -8,9 +8,10 @@ nimcache/
 
 *.nimble_link
 
-# Dependencies
-deps/
-nimbledeps/
+# Dependencies (Atlas installs these at the repo root; do not ignore nested
+# source dirs such as src/raylib/external/glfw/deps or RGFW/deps)
+/deps/
+/nimbledeps/
 
 .env
 .venv
@@ -25,5 +26,5 @@ tools/parser/raylib_parser
 tools/wrapper/naylib_wrapper
 
 # Configuration
-nim.cfg
+/nim.cfg
 

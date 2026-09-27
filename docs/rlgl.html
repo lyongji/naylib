@@ -682,14 +682,11 @@
 </ul>
 <ul class="simple nested-toc-section">loadShaderProgram
   <li><a class="reference" href="#loadShaderProgram%2Cstring%2Cstring" title="loadShaderProgram(vsCode: string; fsCode: string): uint32">loadShaderProgram(vsCode: string; fsCode: string): uint32</a></li>
+<li><a class="reference" href="#loadShaderProgram%2Cuint32%2Cuint32" title="loadShaderProgram(vsId: uint32; fsId: uint32): uint32">loadShaderProgram(vsId: uint32; fsId: uint32): uint32</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">loadShaderProgramCompute
   <li><a class="reference" href="#loadShaderProgramCompute%2Cuint32" title="loadShaderProgramCompute(csId: uint32): uint32">loadShaderProgramCompute(csId: uint32): uint32</a></li>
-
-</ul>
-<ul class="simple nested-toc-section">loadShaderProgramEx
-  <li><a class="reference" href="#loadShaderProgramEx%2Cuint32%2Cuint32" title="loadShaderProgramEx(vsId: uint32; fsId: uint32): uint32">loadShaderProgramEx(vsId: uint32; fsId: uint32): uint32</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">loadTexture
@@ -3220,6 +3217,18 @@
 
   </dd>
 </div>
+<div id="loadShaderProgram,uint32,uint32">
+  <dt><pre><span class="Keyword">proc</span> <a href="#loadShaderProgram%2Cuint32%2Cuint32"><span class="Identifier">loadShaderProgram</span></a><span class="Other">(</span><span class="Identifier">vsId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">fsId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">uint32</span> {.
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;rlLoadShaderProgramEx&quot;</span><span class="Other">,</span> <span class="Identifier">sideEffect</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;rlgl.h&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    Load shader program, using already loaded shader ids
+    <a href="https://github.com/planetis-m/naylib/tree/main/src/rlgl.nim#L486" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
+<a href="https://github.com/planetis-m/naylib/edit/main/src/rlgl.nim#L486" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
+
+  </dd>
+</div>
 
 </div>
 <div id="loadShaderProgramCompute-procs-all">
@@ -3232,21 +3241,6 @@
     Load compute shader program
     <a href="https://github.com/planetis-m/naylib/tree/main/src/rlgl.nim#L488" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
 <a href="https://github.com/planetis-m/naylib/edit/main/src/rlgl.nim#L488" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
-
-  </dd>
-</div>
-
-</div>
-<div id="loadShaderProgramEx-procs-all">
-  <div id="loadShaderProgramEx,uint32,uint32">
-  <dt><pre><span class="Keyword">proc</span> <a href="#loadShaderProgramEx%2Cuint32%2Cuint32"><span class="Identifier">loadShaderProgramEx</span></a><span class="Other">(</span><span class="Identifier">vsId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">;</span> <span class="Identifier">fsId</span><span class="Other">:</span> <span class="Identifier">uint32</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">uint32</span> {.
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;rlLoadShaderProgramEx&quot;</span><span class="Other">,</span> <span class="Identifier">sideEffect</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;rlgl.h&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
-  <dd>
-    
-    Load shader program, using already loaded shader ids
-    <a href="https://github.com/planetis-m/naylib/tree/main/src/rlgl.nim#L486" class="link-seesrc" target="_blank">Source</a>&nbsp;&nbsp;
-<a href="https://github.com/planetis-m/naylib/edit/main/src/rlgl.nim#L486" class="link-seesrc" target="_blank" >Edit</a>&nbsp;&nbsp;
 
   </dd>
 </div>
@@ -4329,7 +4323,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-06-01 05:00:33 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-09-27 12:14:27 UTC</small>
       </div>
     </div>
   </div>
