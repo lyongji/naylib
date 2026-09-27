@@ -15,8 +15,9 @@ nimbledeps/
 .env
 .venv
 
-# Raylib source
-raylib/
+# Raylib source (only the update task's clone at the repo root; the bundled
+# sources live in src/raylib and MUST stay tracked)
+/raylib/
 
 # Compiled tools
 tools/mangler/naylib_mangler
