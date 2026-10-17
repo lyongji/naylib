@@ -55,3 +55,19 @@ To prevent unexpected behavior or crashes, `Load()` functions utilize `IsValid()
 ## Math Libraries
 
 In addition to porting the `raymath` and `reasings` libraries to Nim, Naylib also provides math operators like `+`, `*`, `-=` for convenience.
+
+## Breaking Changes from Bundled raylib Updates
+
+Whenever the bundled raylib is updated, its breaking changes are inherited by the Nim API.
+
+### raylib 6.2
+
+- `drawCapsule` and `drawCapsuleWires`: raylib swapped the `slices` and `rings` parameters, the
+  current order is `(startPos, endPos, radius, rings, slices, color)`. Positional calls still
+  compile but produce the wrong mesh, so pass these two as named arguments when porting.
+- `imageColorContrast`: `contrast` changed from `float32` to `int32`.
+- `getSplinePointBezierQuad` was renamed to `getSplinePointBezierQuadratic`.
+- `imageDraw` was split into `imageDrawImage`, `imageDrawImageRec`, `imageDrawImageEx` and
+  `imageDrawImagePro`, `imageDrawTriangle(v1, v2, v3, c1, c2, c3)` is now `imageDrawTriangleGradient`.
+- The `NaylibRlSupportMeshGpuSkinning` define became `NaylibSupportGpuSkinning`, it passes
+  `SUPPORT_GPU_SKINNING`, which raylib 6.2 enables by default.

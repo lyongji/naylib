@@ -35,6 +35,9 @@ ChangeDirectory            os.setCurrentDir
 MakeDirectory              os.createDir
 GetFileModTime             os.getLastModificationTime
 IsPathFile                 os.getFileInfo
+IsPathAbsolute             os.isAbsolute
+IsPathDirectory            os.dirExists
+IsFileHidden               None                             Check file name prefix
 IsFileNameValid            os.isValidFilename
 LoadDirectoryFiles         os.walkDirRec
 LoadDirectoryFilesEx       os.walkDirRecFilter

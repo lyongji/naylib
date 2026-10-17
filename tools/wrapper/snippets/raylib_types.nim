@@ -154,8 +154,8 @@ proc raiseIndexDefect(i, n: int) {.noinline, noreturn.} =
 template checkArrayAccess(a, x, len) =
   when compileOption("boundChecks"):
     {.line.}:
-      if x < 0 or x >= len:
-        raiseIndexDefect(x, len-1)
+      if x < 0 or x >= int(len):
+        raiseIndexDefect(x, int(len)-1)
 
 proc `[]`*[T](x: RArray[T], i: int): lent T =
   checkArrayAccess(x.data, i, x.len)

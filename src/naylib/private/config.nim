@@ -116,10 +116,10 @@ const NaylibRlShowGlDetailsInfo {.booldefine.} = false
 when NaylibRlShowGlDetailsInfo:
   {.passC: "-DRLGL_SHOW_GL_DETAILS_INFO=1".}
 
-# GPU skinning support
-const NaylibRlSupportMeshGpuSkinning {.booldefine.} = true
-when NaylibRlSupportMeshGpuSkinning:
-  {.passC: "-DRL_SUPPORT_MESH_GPU_SKINNING=1".}
+# GPU skinning support (requires OpenGL 3.3+, needs more than 8 VBOs)
+const NaylibSupportGpuSkinning {.booldefine.} = true
+when NaylibSupportGpuSkinning:
+  {.passC: "-DSUPPORT_GPU_SKINNING=1".}
 
 # ----------------------------------------------------------------------------------------
 # Module: rshapes - Configuration Flags
@@ -190,6 +190,10 @@ when NaylibSupportFileFormatPkm:
 const NaylibSupportFileFormatPvr {.booldefine.} = false
 when NaylibSupportFileFormatPvr:
   {.passC: "-DSUPPORT_FILEFORMAT_PVR=1".}
+
+const NaylibSupportFileFormatPep {.booldefine.} = false
+when NaylibSupportFileFormatPep:
+  {.passC: "-DSUPPORT_FILEFORMAT_PEP=1".}
 
 # Image manipulation support
 const NaylibSupportImageExport {.booldefine.} = true

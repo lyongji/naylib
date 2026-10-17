@@ -211,6 +211,11 @@ proc loadRenderTexture*(width: int32, height: int32): RenderTexture2D =
   result = loadRenderTextureImpl(width, height)
   if not isRenderTextureValid(result): raiseRaylibError("Failed to load RenderTexture")
 
+proc loadRenderTexture*(width: int32, height: int32, format: PixelFormat): RenderTexture2D =
+  ## Load texture for rendering (framebuffer) with custom format
+  result = loadRenderTextureExImpl(width, height, format)
+  if not isRenderTextureValid(result): raiseRaylibError("Failed to load RenderTexture")
+
 proc updateTexture*[T: Pixel](texture: Texture2D, pixels: openArray[T]) =
   ## Update GPU texture with new data (pixels should be able to fill texture)
   assert texture.format == pixelKind(T), "Incompatible texture format"

@@ -13,6 +13,7 @@ This guide describes the process of updating the bundled raylib version and rege
    This fetches the specified raylib version in `raylib/` (a git repository tracking raysan5/raylib) and copies the sources to `src/raylib/`
 3. Build the parser, mangler and wrapper tools:
    ```bash
+   nimble install -y eminim   # once per Nim installation, required by tools/wrapper
    nim buildTools update_bindings.nims
    ```
 
