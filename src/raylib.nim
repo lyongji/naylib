@@ -78,7 +78,8 @@ else:
     else: {.passL: "-static-libgcc -lopengl32 -lgdi32 -lwinmm".}
 
   elif defined(macosx):
-    {.passL: "-framework OpenGL -framework Cocoa -framework IOKit -framework CoreAudio -framework CoreVideo".}
+    # QuartzCore：bundled GLFW 的 Cocoa 后端使用 CAMetalLayer
+    {.passL: "-framework OpenGL -framework Cocoa -framework IOKit -framework QuartzCore -framework CoreAudio -framework CoreVideo".}
 
   else:
     when defined(linux):
