@@ -2,7 +2,7 @@
 
 <img src="assets/naylib.png" alt="Naylib logo" width="15%" />
 
-> **This is a maintained fork of [planetis-m/naylib](https://github.com/planetis-m
+> **This is a maintained fork of [planetis-m/naylib](https://github.com/planetis-m/naylib)
  
 Welcome to this repository! Here you'll find a Nim wrapper for raylib, a library for
 creating 2D and 3D games. The Nim API is designed to be user-friendly and easy to use.
