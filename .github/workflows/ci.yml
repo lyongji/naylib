@@ -45,19 +45,14 @@ jobs:
       uses: emscripten-core/setup-emsdk@v16
       with:
         version: latest
-    - name: Debug Emscripten
-      run: |
-        Get-ChildItem "$env:EMSDK\upstream\emscripten" -Filter "emcc*" | Select-Object Name
-        Write-Host "EMSDK_PYTHON=$env:EMSDK_PYTHON"
-        Write-Host "EMSDK_NODE=$env:EMSDK_NODE"
     - name: Run tests
       run: |
-        # 新版 emscripten 不再随包提供 emcc.bat，补一个转发到 emcc.py 的薄包装
+        # 新版 emscripten 不再随包提供 emcc.bat（上游 #26247），
+        # 而 tests/basic_window_web.nims 在 Windows 上按名字调用它，需自行补上
         $em = "$env:EMSDK\upstream\emscripten"
         if (-not (Test-Path "$em\emcc.bat")) {
           $py = if ($env:EMSDK_PYTHON) { $env:EMSDK_PYTHON } else { "python" }
           Set-Content -Path "$em\emcc.bat" -Value "@`"$py`" `"$em\emcc.py`" %*"
-          Write-Host "created emcc.bat shim"
         }
         nimble test -Y
 
