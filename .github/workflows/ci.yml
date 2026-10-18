@@ -48,8 +48,9 @@ jobs:
         .\emsdk.ps1 install latest
         .\emsdk.ps1 activate latest
     - name: Run tests
+      shell: cmd
       run: |
-        .\emsdk\emsdk.ps1 construct_env
+        call "%GITHUB_WORKSPACE%\emsdk\emsdk_env.bat"
         nimble test -Y
 
   test-macos:
