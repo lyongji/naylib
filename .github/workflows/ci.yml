@@ -45,6 +45,20 @@ jobs:
       uses: emscripten-core/setup-emsdk@v16
       with:
         version: latest
+    - name: Debug Emscripten
+      run: |
+        Write-Host "EMSDK=$env:EMSDK"
+        Write-Host "EMSDK_NODE=$env:EMSDK_NODE"
+        Write-Host "EM_CONFIG=$env:EM_CONFIG"
+        Get-ChildItem "$env:EMSDK" -Filter emcc.bat -Recurse -ErrorAction SilentlyContinue | Select-Object -First 3 FullName
+        Write-Host "--- PATH entries with emsdk/emscripten ---"
+        $env:PATH -split ';' | Where-Object { $_ -match 'emsdk|emscripten' }
+        Write-Host "--- construct_env output ---"
+        & "$env:EMSDK\emsdk.ps1" construct_env
+        Write-Host "--- PATH after construct_env ---"
+        $env:PATH -split ';' | Where-Object { $_ -match 'emsdk|emscripten' }
+        Write-Host "--- Get-Command emcc.bat ---"
+        (Get-Command emcc.bat -ErrorAction SilentlyContinue).Source
     - name: Run tests
       run: nimble test -Y
 
