@@ -41,6 +41,10 @@ jobs:
       with:
         nim-version: 'stable'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Emscripten
+      uses: emscripten-core/setup-emsdk@v16
+      with:
+        version: latest
     - name: Run tests
       run: nimble test -Y
 

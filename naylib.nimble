@@ -57,6 +57,4 @@ task test, "Runs the test suite":
     exec "nim c -d:release -d:wayland tests/basic_window.nim"
     # cross-compile to windows
     exec "nim c -d:release -d:mingw tests/basic_window.nim"
-  # Windows 上 CreateProcess 无法直接执行 emcc.bat，跳过 wasm 交叉编译
-  when not defined(windows):
-    exec "nim c -d:release -d:emscripten tests/basic_window_web.nim"
+  exec "nim c -d:release -d:emscripten tests/basic_window_web.nim"
