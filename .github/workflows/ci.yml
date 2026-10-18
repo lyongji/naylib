@@ -42,16 +42,11 @@ jobs:
         nim-version: 'stable'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
     - name: Set up Emscripten
-      run: |
-        git clone https://github.com/emscripten-core/emsdk.git
-        cd emsdk
-        .\emsdk.ps1 install latest
-        .\emsdk.ps1 activate latest
+      uses: emscripten-core/setup-emsdk@v16
+      with:
+        version: latest
     - name: Run tests
-      shell: cmd
-      run: |
-        call "%GITHUB_WORKSPACE%\emsdk\emsdk_env.bat"
-        nimble test -Y
+      run: nimble test -Y
 
   test-macos:
     runs-on: macos-latest
